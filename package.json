@@ -1,0 +1,21 @@
+{
+  "name": "room-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./BACKEND/dist/index.js",
+    "build": "cd ./FRONTEND && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DharmilGoyani/Chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DharmilGoyani/Chat-app/issues"
+  },
+  "homepage": "https://github.com/DharmilGoyani/Chat-app#readme",
+  "description": ""
+}
