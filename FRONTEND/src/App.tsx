@@ -42,6 +42,7 @@ function App() {
 
     // navigate("/chat");
     return () => {
+      setMessage([]);
       ws.close();
     }
 

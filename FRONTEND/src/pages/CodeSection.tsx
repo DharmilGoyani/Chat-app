@@ -1,4 +1,4 @@
-export function CodeSection(props) {
+export function CodeSection(props:any) {
     return <div className="flex justify-between ">
         <div className="border rounded-xl p-4 bg-gray-900 w-full mr-4">
         {props.roomCode}
@@ -11,6 +11,6 @@ export function CodeSection(props) {
   </div>
 }
 
-function copyToClipboard(room) {
+function copyToClipboard(room:any) {
     navigator.clipboard.writeText(room);
   }

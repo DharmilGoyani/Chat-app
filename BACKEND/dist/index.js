@@ -25,6 +25,13 @@ wss.on("connection", function (socket) {
             });
         }
     });
+    socket.on("close", () => {
+        const index = allUsers.findIndex((x) => x.socket === socket);
+        if (index !== -1) {
+            console.log(`User ${allUsers[index].name} disconnected`);
+            allUsers.splice(index, 1); // Remove the disconnected user
+        }
+    });
 });
 // if(user.type == "chat"){
 //     allUsers.forEach((x: any) => {

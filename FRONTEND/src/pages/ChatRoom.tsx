@@ -1,6 +1,6 @@
 
-import { ReactElement, useEffect, useRef, useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useRef } from "react"
+// import { useNavigate } from "react-router-dom";
 
 //@ts-ignore
 export function ChatRoom({ws , message ,room , name , senderName}) {
@@ -11,7 +11,7 @@ export function ChatRoom({ws , message ,room , name , senderName}) {
     //@ts-ignore
     const inputRef = useRef();
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
   
 
     
@@ -50,24 +50,30 @@ export function ChatRoom({ws , message ,room , name , senderName}) {
           <div className="flex justify-between items-center bg-gray-800 px-3 py-2 rounded-lg">
             <span className="text-gray-300 text-sm">Room Code: {room} </span>
           </div>
-          <div className="text-right text-sm text-gray-400 mt-1">Users: 1</div>
+          {/* <div className="text-right text-sm text-gray-400 mt-1">Users: 1</div> */}
           <div className="h-100 overflow-auto bg-black p-3 rounded-lg mt-3">
-            {message.map(x => (
+            {message.map((x:any) => (
                 (x.name == name 
                   ?<div className="flex justify-end">
-                    <div className="mt-3">
-                    <span className="flex mb-1 justify-end">{x.name}</span>
-                    <span className="border rounded bg-white text-black p-1 px-2 w-full">
-                        {x.message}
-                    </span>
+                  <div className="mt-3 max-w-xs md:max-w-md lg:max-w-lg text-right">
+                    <span className="block text-gray-300 text-sm mb-1">{x.name}</span>
+                    <div className="border rounded-lg bg-white text-black p-2 px-3 break-words whitespace-normal text-left">
+                      {x.message}
                     </div>
                   </div>
-                  :<div className="mt-3">
-                    <span className="flex mb-1">{x.name}</span>
-                    <span className="border rounded bg-white text-black p-1 px-2">
-                        {x.message}
-                    </span>
+                </div>
+                
+                
+                
+                
+                  :<div className="flex">
+                  <div className="mt-3 max-w-xs md:max-w-md lg:max-w-lg text-right">
+                    <span className="flex text-gray-300 text-sm mb-1">{x.name}</span>
+                    <div className="border rounded-lg bg-white text-black p-2 px-3 break-words whitespace-normal text-left">
+                      {x.message}
                     </div>
+                  </div>
+                </div>
                 )
             ))}
           </div>
@@ -94,3 +100,17 @@ export function ChatRoom({ws , message ,room , name , senderName}) {
   //                       {x.message}
   //                   </span>
   //               </div>
+
+
+
+
+  // <div className="flex justify-end">
+  //                   <div className="mt-3">
+  //                   <span className="flex mb-1 justify-end">{x.name}</span>
+  //                   <span className="border rounded bg-white text-black p-1 px-2 w-full">
+  //                       {x.message}
+  //                   </span>
+  //                   </div>
+  //                 </div>
+
+
